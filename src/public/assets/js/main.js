@@ -49,6 +49,7 @@ var dataAddress = [
     "Gò Sao",
     "Bình Thủy",
   ],
+  ["-/--"],
 ];
 $(document).ready(function () {
   var add_1 = $("#add-1");
