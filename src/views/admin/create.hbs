@@ -1,0 +1,196 @@
+<div class="container mt-5">
+  {{#if error}}
+    <div class="alert alert-danger" role="alert">
+      {{{error}}}
+    </div>
+  {{/if}}
+  <div class="row">
+    <div class="col">
+      <h3 class="mb-4">Thêm tin mới</h3>
+      <form
+        autocomplete="off"
+        spellcheck="false"
+        action="/admin/store"
+        method="POST"
+        enctype="multipart/form-data"
+      >
+        <div class="form-group">
+          <input
+            type="text"
+            class="form-control"
+            name="title"
+            placeholder="Tiêu đề"
+          />
+        </div>
+        <div class="form-group">
+          <textarea
+            class="form-control"
+            rows="6"
+            name="content"
+            placeholder="Nội dụng"
+          ></textarea>
+        </div>
+
+        <div class="form-group">
+          <div class="row">
+            <div class="col">
+              <input
+                type="text"
+                class="form-control"
+                name="size"
+                placeholder="Kích thước"
+              />
+            </div>
+            <div class="col">
+              <input
+                type="text"
+                class="form-control"
+                name="area"
+                placeholder="Diện tích"
+              />
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="row">
+            <div class="col">
+              <input
+                type="text"
+                class="form-control"
+                name="contact"
+                placeholder="Tên liên hệ"
+              />
+            </div>
+            <div class="col">
+              <input
+                type="text"
+                class="form-control"
+                name="phone"
+                placeholder="Số điện thoại"
+              />
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="row">
+            <div class="col-md-6 sm-mb">
+              <input
+                type="text"
+                class="form-control"
+                name="price"
+                placeholder="Giá"
+              />
+            </div>
+            <div class="col-md-6">
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <div class="input-group-text">Loại</div>
+                </div>
+                <select class="custom-select" name="type">
+                  <option>Đất Thổ</option>
+                  <option>Đất Lúa</option>
+                  <option>Đất Vườn</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="row">
+            <div class="col-md-6 sm-mb">
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <div class="input-group-text">Thị trấn / Xã</div>
+                </div>
+                <select name="add1" id="add-1" class="custom-select">
+                  <option value="0">Đức Hòa</option>
+                  <option value="1">Hậu Nghĩa</option>
+                  <option value="2">Hiệp Hòa</option>
+                  <option value="3">An Ninh Đông</option>
+                  <option value="4">An Ninh Tây</option>
+                  <option value="5">Đức Hòa Đông</option>
+                  <option value="6">Đức Hòa Hạ</option>
+                  <option value="7">Đức Hòa Thượng</option>
+                  <option value="8">Đức Lập Hạ</option>
+                  <option value="9">Đức Lập Thượng</option>
+                  <option value="10">Xã Hiệp Hòa</option>
+                  <option value="11">Hòa Khánh Đông</option>
+                  <option value="12">Hòa Khánh Nam</option>
+                  <option value="13">Hòa Khánh Tây</option>
+                  <option value="14">Hựu Thạnh</option>
+                  <option value="15">Lộc Giang</option>
+                  <option value="16">Mỹ Hạnh Bắc</option>
+                  <option value="17">Mỹ Hạnh Nam</option>
+                  <option value="18">Tân Mỹ</option>
+                  <option value="19">Tân Phú</option>
+                </select>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <div class="input-group-text">Khu vực / Ấp</div>
+                </div>
+                <select name="add2" id="add-2" class="custom-select">
+                  <option>Khu vực 1</option>
+                  <option>Khu vực 2</option>
+                  <option>Khu vực 3</option>
+                  <option>Khu vực 4</option>
+                  <option>Khu vực 5</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="row">
+            <div class="col-md-3 sm-mb">
+              <label for="image-1">Ảnh Bìa</label>
+              <input
+                type="file"
+                class="form-control-file"
+                id="image-1"
+                name="thumbnail"
+              />
+            </div>
+            <div class="col-md-3 sm-mb">
+              <label for="image-2">Hình Ảnh 1</label>
+              <input
+                type="file"
+                class="form-control-file"
+                id="image-2"
+                name="images"
+              />
+            </div>
+            <div class="col-md-3 sm-mb">
+              <label for="image-3">Hình Ảnh 2</label>
+              <input
+                type="file"
+                class="form-control-file"
+                id="image-3"
+                name="images"
+              />
+            </div>
+            <div class="col-md-3">
+              <label for="image-4">Hình Ảnh 3</label>
+              <input
+                type="file"
+                class="form-control-file"
+                id="image-4"
+                name="images"
+              />
+            </div>
+          </div>
+
+        </div>
+
+        <button type="reset" class="btn btn-danger mr-2">Tạo lại</button>
+        <button type="submit" class="btn btn-primary">Đăng tin</button>
+      </form>
+    </div>
+  </div>
+</div>

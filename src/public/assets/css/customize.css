@@ -1,0 +1,24 @@
+html {
+}
+
+body {
+  font-family: "Roboto Condensed", sans-serif;
+}
+
+.navbar {
+  background-color: #fff;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+}
+
+.navbar-image {
+  height: 50px;
+}
+
+.icon {
+}
+
+@media (max-width: 575.98px) {
+  .sm-mb {
+    margin-bottom: 1rem;
+  }
+}

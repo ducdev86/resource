@@ -1,0 +1,83 @@
+<div class="container">
+  <div class="grid">
+    <div class="row">
+      <div class="col l-8 m-8 c-12">
+        <div class="article">
+          <div class="article__top">
+            <h2 class="article__heading">
+              {{article.title}}
+            </h2>
+            <p class="article__info">
+              ID:
+              <span class="article__info--light">{{article._id}}</span>
+            </p>
+            <p class="article__info">
+              Thời gian:
+              <span class="article__info--light">{{date}}</span>
+            </p>
+          </div>
+          <div class="article__middle">
+            <div class="article__images">
+              {{#each article.images}}
+                <img
+                  src="/{{this}}"
+                  alt="Hình ảnh của {{article.title}}"
+                  class="article__image"
+                />
+              {{/each}}
+
+            </div>
+          </div>
+
+          <div class="article__bottom">
+            <div class="article__content">
+              {{article.content}}
+            </div>
+            <div class="article__meta">
+              <span class="article__meta--light">{{article.add2}},
+                {{article.add1}}, Đức Hòa, Long An</span>
+            </div>
+            <div class="article__wrap">
+              <div class="article__meta">
+                Kích thước:
+                <span class="article__meta--light">{{article.size}}m</span>
+              </div>
+              <div class="article__meta">
+                Diện tích:
+                <span class="article__meta--light">{{article.area}}
+                  m<sup>2</sup>
+                </span>
+              </div>
+            </div>
+            <div class="article__wrap">
+              <div class="article__meta">
+                Loại:
+                <span class="article__meta--light">{{article.type}}</span>
+              </div>
+              <div class="article__meta">
+                Giá:
+                <span class="article__meta--price">{{article.price}}</span>
+              </div>
+            </div>
+            <div class="article__wrap">
+              <div class="article__meta">
+                Tên liên hệ:
+                <span class="article__meta--light">{{article.contact}}</span>
+              </div>
+              <div class="article__meta">
+                SĐT:
+                <span class="article__meta--light">{{article.phone}}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="col l-4 m-4 c-12">
+        <div class="ads">
+          <img src="/assets/images/ads.png" alt="" width="100%" />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

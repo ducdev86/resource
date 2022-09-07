@@ -1,0 +1,71 @@
+<div class="container">
+  <div class="grid">
+
+    {{#if add1}}
+      <div class="separate">
+        <h2 class="separate__heading">
+          Mua Bán Nhà Đất
+          {{add1}}
+        </h2>
+      </div>
+    {{else}}
+      <div class="message">
+        <p class="message__content">
+          Chưa có bài đăng nào được thêm, vui lòng chọn khu vực khác hoặc trở về
+          trang chủ
+
+        </p>
+        <a href="/" class="btn btn--home">
+          <i class="fas fa-home btn__icon"></i>
+          Về Trang Chủ
+        </a>
+      </div>
+    {{/if}}
+    <div class="row">
+
+      {{#each posts}}
+        <div class="col l-6 m-6 c-12">
+          <article class="post">
+            <div class="post__left">
+              <a href="/article/{{this.slug}}" class="post__left__link">
+                <img
+                  src="/{{this.thumbnail}}"
+                  alt=""
+                  class="post__left__image"
+                />
+              </a>
+            </div>
+            <div class="post__right">
+              <a href="/article/{{this.slug}}" class="post__right__link">
+                <h2 class="post__right__heading">
+                  {{this.title}}
+                </h2>
+              </a>
+              <div class="post__right__wrap">
+                <div class="post__right__meta">Kích thước: {{this.size}}m</div>
+                <div class="post__right__meta">
+                  Diện tích:
+                  {{this.area}}
+                  m<sup>2</sup>
+                </div>
+              </div>
+              <div class="post__right__wrap">
+                <div class="post__right__meta">{{this.add1}}</div>
+                <div class="post__right__meta">{{this.add2}}</div>
+              </div>
+              <div class="post__right__wrap">
+                <div class="post__right__meta">Loại: {{this.type}}</div>
+                <div class="post__right__meta">
+                  Giá:
+                  <span class="post__right__meta--price">{{this.price}}</span>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+      {{/each}}
+
+    </div>
+
+  </div>
+</div>

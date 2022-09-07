@@ -1,0 +1,134 @@
+<div class="container mt-4">
+  <div class="d-flex align-items-center justify-content-between mb-4">
+    <h3>Danh sách bài đăng</h3>
+    <a href="/admin/create" class="btn btn-primary">Thêm mới</a>
+  </div>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Tiêu đề</th>
+        <th scope="col">Thời gian tạo</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each posts}}
+        <tr>
+          <th scope="row">{{this._id}}</th>
+          <td>{{this.title}}</td>
+          <td>{{this.createdAt}}</td>
+          <td>
+            <a
+              href="#"
+              class="btn btn-primary"
+              data-target="#renewModal"
+              data-toggle="modal"
+              data-id={{this._id}}
+            >
+              <i class="fas fa-retweet"></i>
+            </a>
+            <a href="/admin/{{this._id}}/edit" class="btn btn-info">
+              <i class="fas fa-edit"></i>
+            </a>
+            <a
+              href="#"
+              class="btn btn-danger"
+              data-target="#deleteModal"
+              data-toggle="modal"
+              data-id={{this._id}}
+            >
+              <i class="fas fa-times"></i>
+            </a>
+          </td>
+        </tr>
+      {{else}}
+        <tr>
+          <td colspan="5">
+            Chưa có bài đăng nào được thêm.
+            <a href="/admin/create">Thêm bài đăng</a>
+          </td>
+        </tr>
+      {{/each}}
+    </tbody>
+  </table>
+</div>
+
+<form name="form-delete-post" method="POST"></form>
+<form name="form-renew-post" method="POST"></form>
+
+<!-- Modal Delete -->
+<div
+  class="modal fade"
+  id="deleteModal"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Xóa bài đăng?</h5>
+        <button
+          type="button"
+          class="close"
+          data-dismiss="modal"
+          aria-label="Close"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Bạn có chắc chắn muốn xóa bài đăng?
+      </div>
+      <div class="modal-footer">
+        <button
+          type="button"
+          class="btn btn-secondary"
+          data-dismiss="modal"
+        >Hủy</button>
+        <button type="button" class="btn btn-danger" id="button-delete-post">Xóa
+          tin</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal Renew -->
+<div
+  class="modal fade"
+  id="renewModal"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Làm mới bài đăng?</h5>
+        <button
+          type="button"
+          class="close"
+          data-dismiss="modal"
+          aria-label="Close"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Bạn có chắc chắn muốn làm mới bài đăng?
+      </div>
+      <div class="modal-footer">
+        <button
+          type="button"
+          class="btn btn-secondary"
+          data-dismiss="modal"
+        >Hủy</button>
+        <button type="button" class="btn btn-primary" id="button-renew-post">Làm
+          Mới</button>
+      </div>
+    </div>
+  </div>
+</div>
