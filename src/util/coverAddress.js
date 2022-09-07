@@ -40,6 +40,8 @@ module.exports = function (x) {
       return (x = "Tân Mỹ");
     case "19":
       return (x = "Tân Phú");
+    case "20":
+      return (x = "-/--");
     default:
       return (x = "Đức Hòa");
   }
